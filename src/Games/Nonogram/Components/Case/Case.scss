@@ -1,0 +1,53 @@
+@import "/src/styles/colors.scss";
+
+.Nonogram .Case {
+    border-bottom: 1px solid color(gray, light);
+    border-right: 1px solid color(gray, light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+.Nonogram .clickable {
+    cursor: pointer;
+}
+
+.Nonogram .Case-pleine {
+    background-color: color(gray, dark);
+}
+
+.Nonogram .Case-fausse {
+    background-color: color(error, base);
+}
+
+.Nonogram .Case-BorderTop {
+    border-top: 3px solid;
+}
+
+.Nonogram .Case-BorderLeft {
+    border-left: 3px solid;
+}
+
+.Nonogram .Case-BorderBottom {
+    border-bottom: 3px solid;
+}
+
+.Nonogram .Case-BorderRight {
+    border-right: 3px solid;
+}
+
+.Nonogram .Case-Content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Nonogram .Case-Content img {
+    width: 35%;
+    height: 35%;
+}
+
+.Nonogram .Case-inconnue.CaseHighlight {
+    box-shadow: inset 0px 0px 0px 2px color(warning, base);
+}

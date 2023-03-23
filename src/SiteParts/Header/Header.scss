@@ -1,0 +1,41 @@
+@import "/src/styles/colors.scss";
+
+.GameMenuHeaderReduct {
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: color(background, primary);
+    color: color(gray, darkest);
+    min-height: 4vh;
+    padding: 0 20px;
+}
+
+.GameMenuHeaderDeployable {
+    position: fixed;
+    width: calc(100vw - 20px);
+    top: 0;
+    left: 0;
+    transform: translateY(-100%);
+    padding: 10px;
+}
+
+.HeaderContent {
+    padding: 10px 20px;
+    background-color: color(gray, light);
+    border: 2px outset color(gray, darkest);
+    border-radius: 20px;
+}
+
+.GameMenuHeaderDeployable.deployed {
+    animation: toggleHeader 0.1s linear;
+    transform: translateY(0);
+}
+
+@keyframes toggleHeader {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}

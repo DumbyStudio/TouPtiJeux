@@ -1,0 +1,63 @@
+@import "/src/styles/colors.scss";
+
+.Nonogram .Indicateur {
+    display: flex;
+    background-color: color(gray, lighter);
+    color: color(gray, darkest);
+    justify-content: flex-end;
+    flex: 1 1;
+    border-radius: 3px;
+    margin: 2px;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.IndicateurCompleted {
+    color: color(gray, light) !important;
+    background-color: color(gray, lighter, 0.4) !important;
+}
+
+.Nonogram .Indicateur-column {
+    flex-direction: column;
+}
+
+.Nonogram .Indicateur-row {
+    flex-direction: row;
+    align-items: center;
+}
+
+.Nonogram .Indicateur-number {
+    text-align: center;
+    vertical-align: middle;
+    font-weight: 600;
+    font-size: 1em;
+}
+
+.Nonogram .Indicateur-row .Indicateur-number {
+    margin: 0px 10px;
+}
+
+.Nonogram .Indicateur-column .Indicateur-number {
+    margin: 5px 0px;
+}
+
+@media (max-height: 800px) {
+    .Nonogram .Indicateur {
+        margin: 1px !important;
+    }
+}
+
+@media (max-width: 750px) {
+    .Nonogram .Indicateur {
+        align-items: center;
+        flex: 1;
+    }
+
+    .Nonogram .Indicateur-number {
+        font-size: 0.7em;
+        font-weight: 800;
+    }
+}

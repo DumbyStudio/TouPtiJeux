@@ -1,0 +1,30 @@
+.ModalBackgroundBlured {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.ModalBackground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Modal {
+    width: 60%;
+    min-height: 40%;
+    animation: toggleModal 0.1s linear;
+}
+
+@keyframes toggleModal {
+    0% {
+        transform: scale(20%);
+    }
+    100% {
+        transform: scale(100%);
+    }
+}

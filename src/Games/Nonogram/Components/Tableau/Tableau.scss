@@ -1,0 +1,27 @@
+@import "/src/styles/colors.scss";
+
+.Nonogram .Tableau {
+    display: grid;
+    grid-template-columns: 0.25fr 1fr;
+    grid-template-rows: 0.25fr 1fr;
+    grid-gap: 0px;
+    grid-template-areas:
+        "Tableau-infos Tableau-topIndics"
+        "Tableau-sideIndics Tableau-cases";
+    height: 90vh;
+    width: 90vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
+}
+
+.Nonogram .Tableau-cases {
+    grid-area: "Tableau-cases";
+    display: grid;
+    grid-gap: 0px;
+    border: 2px solid black;
+}
+
+.Nonogram .Tableau-cases.highlight-empty .Case-inconnue {
+    box-shadow: inset 0px 0px 0px 2px color(warning, base);
+}

@@ -1,0 +1,60 @@
+@import "/src/styles/colors.scss";
+
+.Nonogram {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: min(3vh, 1em);
+}
+
+.Nonogram button,
+.Nonogram .Display {
+    color: color(gray, darkest);
+    border: 1px inset color(gray, darker);
+    background-color: color(gray, simple);
+    border-radius: 5px;
+    padding: min(5%, 10px);
+    font-weight: 600;
+    font-size: 1em;
+}
+
+.Nonogram button {
+    cursor: pointer;
+}
+
+.Nonogram .Modal {
+    background-color: color(gray, lightest);
+    border: 5px outset color(gray, darkest);
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.Nonogram p,
+.Nonogram li {
+    font-size: 1.3em;
+    font-weight: lighter;
+}
+
+@media (max-width: 750px) {
+    .Nonogram {
+        flex-direction: column-reverse !important;
+        height: none;
+        max-height: none;
+    }
+
+    .Nonogram .Tableau {
+        width: 90vw !important;
+        height: 90vw !important;
+    }
+
+    .Nonogram button,
+    .Nonogram .Display {
+        font-size: 0.8em;
+    }
+}

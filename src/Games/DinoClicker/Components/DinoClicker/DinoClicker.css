@@ -1,0 +1,10 @@
+.DinoClicker {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 0.5fr;
+}
+
+.DinoClicker:first-child {
+    border-top-left-radius: 10px;
+}

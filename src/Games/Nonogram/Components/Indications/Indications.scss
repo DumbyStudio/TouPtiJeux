@@ -1,0 +1,52 @@
+@import "/src/styles/colors.scss";
+
+.Indications {
+    scrollbar-width: thin;
+    display: flex;
+    scrollbar-color: color(gray, light) rgba(0, 0, 0, 0);
+}
+
+.Nonogram .Indications-column {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    height: calc(100% + 8px);
+    flex-direction: row;
+}
+
+.Nonogram .Indications-row {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: calc(100% + 8px);
+    flex-direction: column;
+}
+
+.Nonogram .IndicationsContent {
+    display: flex;
+    justify-content: stretch;
+    align-items: stretch;
+    flex-grow: 1;
+}
+
+.Nonogram .IndicationsContent-column {
+    flex-direction: column;
+    height: 100%;
+}
+
+.Nonogram .IndicationsContent-row {
+    flex-direction: row;
+    width: 100%;
+}
+
+@media (max-width: 750px) {
+    .Nonogram .Indications {
+        justify-content: space-around;
+    }
+
+    .Nonogram .Indications-column {
+        height: 100%;
+    }
+
+    .Nonogram .Indications-row {
+        width: 100%;
+    }
+}

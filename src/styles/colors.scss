@@ -1,0 +1,34 @@
+@use "sass:string";
+
+:root {
+    --rgb-gray-lightest: 230, 245, 255;
+    --rgb-gray-lighter: 190, 205, 215;
+    --rgb-gray-light: 150, 165, 175;
+    --rgb-gray-simple: 110, 125, 135;
+    --rgb-gray-dark: 70, 85, 95;
+    --rgb-gray-darker: 30, 45, 55;
+    --rgb-gray-darkest: 0, 15, 25;
+
+    --rgb-background-primary: 132, 50, 172;
+    --rgb-background-secondary: 172, 50, 119;
+
+    --rgb-foreground-lighter: 202, 240, 248;
+    --rgb-foreground-light: 144, 224, 239;
+    --rgb-foreground-simple: 0, 180, 216;
+    --rgb-foreground-dark: 0, 119, 182;
+    --rgb-foreground-darker: 3, 4, 94;
+
+    --rgb-error-light: 255, 89, 94;
+    --rgb-error-base: 220, 54, 59;
+    --rgb-error-dark: 185, 19, 24;
+    --rgb-warning-base: 255, 202, 58;
+    --rgb-good-base: 138, 201, 38;
+}
+
+@function color($base, $tone, $alpha: 1) {
+    @return (
+        string.unquote(
+            "rgba(var(--rgb-" + $base + "-" + $tone + "), " + $alpha + ")"
+        )
+    );
+}

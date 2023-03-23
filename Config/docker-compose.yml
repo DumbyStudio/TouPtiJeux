@@ -1,0 +1,52 @@
+version: "3.3"
+
+# ======================================================================================================================
+# SERVICES
+# ======================================================================================================================
+
+services:
+
+    # --------------------------------------------------------------------------------
+    # DATABASES
+    # --------------------------------------------------------------------------------
+
+    # PostgreSQL
+    pgdb:
+      image: postgres:${POSTGRES_VERSION}
+      restart: always
+      working_dir: /application
+      ports: 
+        - "${POSTGRES_PORT}:5432"
+      volumes:
+        - pg_data:/var/lib/postgresql/data
+      environment:
+        - POSTGRES_USER=${POSTGRES_USER}
+        - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+        - POSTGRES_DB=${POSTGRES_DB}    
+    
+    # --------------------------------------------------------------------------------
+    #  NODE WEB SERVER
+    # --------------------------------------------------------------------------------
+
+    nodeserver:
+      image: nodeserver
+      user: "node"
+      working_dir: /home/node/app
+      build:
+        context: nodedocker
+      restart: always
+      environment:
+        - WDS_SOCKET_PORT=3630
+        - NODE_ENV=development
+      volumes:
+        - ./app/node/${NODE_START_PATH}:/home/node/app
+      ports:
+        - "${NODE_MAIN_PORT}:3000"
+      command: "npm start"
+
+# ======================================================================================================================
+# VOLUMES
+# ======================================================================================================================
+
+volumes:       
+  pg_data:
